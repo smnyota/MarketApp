@@ -1,0 +1,382 @@
+body {
+    background-color: lightgrey;
+    position: relative;
+}
+
+
+/* h1 {
+    background-color: lightblue;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: green;
+    border-bottom: 3px solid black;
+    text-align: center;
+
+} */
+
+.container {
+    position: relative;
+    color: white;
+    width: 100%;
+}
+
+.heading {
+    font-size: 30px;
+    color: black;
+}
+
+.banner {
+
+
+    background-color: rgba(0, 0, 0, 0.2);
+    /*sets the background color to be transparent */
+    /* (cont.) without affecting the actual text color itself */
+    position: absolute;
+    top: 0%; /* sets the banner to the top left of the page*/
+    left: 0%;
+    width: 100%;
+    font-size: 40px;  /*static font size but can change to make it responsive */
+
+}
+
+
+a:visited {
+    color: white;
+}
+
+.center {
+    /*contains text: Hi, I'm Shangwe... */
+    position: absolute;
+    /*allows page to be responsive!*/
+    top: 50%;
+    /* width: 100%; */
+    left: 30%;
+    right: 30%;
+    font-size: 175%;
+    /*dynamic font size */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    /*sets the background color to be transparent */
+    /* (cont.) without affecting the actual text color itself */
+
+}
+
+.pictureBackground {
+    width: 100%;
+    /*sets the width of the picture to be 100% of the screen */
+    opacity: 0.3;
+    /*slightly more transparent */
+    height: 100%;
+    /* slightly reduced the picture's height */
+
+}
+
+
+
+
+.bigContainer {
+    margin-top: 35px;
+    display: flex;
+    /* justify-content: space-evenly; */
+    gap: 50px;
+    
+
+
+}
+
+
+
+.Portfolio {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: lightgrey; /*ask about this */
+    
+    padding-right: 0px;
+    flex-basis:0;
+    flex-grow:1;
+}
+
+.port-img >img{
+    width: 100%;
+    flex-basis:0;
+    flex-grow:1;
+   
+
+}
+
+ .port-whiteBlock {
+    flex-basis:0;
+    /* flex-grow:1; */
+    border: solid;
+    border-color: blue; /*could make blue tho*/
+    background-color: lightseagreen;
+    padding-bottom: 10px;
+    border: solid;
+    border-color: black;
+
+    
+ }  
+
+
+      .button1:hover {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+  
+
+button {
+    display: block;
+    margin: auto;
+    border-radius:25px;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 3.5%;
+    font-size: 18px;
+    margin-bottom: 0%;
+    border: solid;
+
+    
+}
+
+
+
+
+
+.AboutMe {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: white;
+    border: solid;
+    border-color: black;
+    padding-right: 0px;
+    flex-basis:0;
+    flex-grow:1;
+
+
+}
+
+.ab-img > img {
+    flex-basis:0;
+    flex-grow:1;
+    width: 100%;
+
+    
+}
+
+.ab-img {
+    max-height: 29%;
+}
+
+.ab-whiteBlock {
+    flex-basis:0;
+    flex-grow:1;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    border: solid;
+    border-color: black;
+}
+
+
+
+
+
+
+
+
+.Hobbies {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: white;
+    border: solid;
+    border-color: black;
+    padding-right: 0px;
+    flex-basis:0;
+    flex-grow:1;
+}
+
+.hb-img {
+    max-height: 29%;
+}
+
+.hb-img >img{
+    width: 100%;
+    flex-basis:0;
+    flex-grow:1;
+    max-height: 100%;
+  
+    
+
+}
+
+.hb-whiteBlock {
+    flex-basis:0;
+    flex-grow:1;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    border: solid;
+    border-color: black; /*could make blue tho*/
+}
+
+.test {
+    cursor: pointer;
+
+}
+
+.contactSection {
+    align-items: center;
+    /* justify-content: center; */
+    padding-bottom: 1rem;
+    background-color: #f6f5f3;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    /* box-sizing: border-box; */
+
+}
+
+.contactHeader {
+    margin-bottom: 2rem;
+    border-bottom: solid;
+    font-size: 2.75rem;
+    font-weight: bold;
+    border-color: lightseagreen;
+}
+
+.contactBody {
+    width: 30%;
+}
+ 
+.fd {
+    display: flex;
+    flex-direction: column;
+}
+
+.fname {
+    padding: 0.75rem;
+    margin: 0.6rem 0;
+    border: 1px solid transparent;
+}
+
+.lname {
+    padding: 0.75rem;
+    margin: 0.6rem 0;
+    border: 1px solid transparent;
+}
+
+.message {
+    padding: 0.75rem;
+    margin: 0.6rem 0;
+    border: 1px solid transparent;
+}
+
+
+.submit {
+    width: 50%;
+    cursor: pointer;
+    /* box-shadow: inset 0 0 0 0 #ecf0f1; */
+    /* outline: none; */
+    background-color: #fff;
+    margin: 0.7rem 0;
+    padding: 0.75rem;
+    border: 1px solid transparent;
+    align-self: center;
+    font-size: 1rem;
+    /* border-radius: 0; */
+}
+
+
+.socialMedia {
+    display: flex;
+    margin-top: 50px;
+    gap: 10px;
+    max-width: 30%;
+    height:5%;
+    justify-content: center;
+    margin: auto;
+    background-color: lightgrey;
+    /* border: solid; */
+    /* border-color: blue; */
+    align-items: center;
+    gap: 1.75em;
+
+
+
+}
+
+
+/* LOGOS */
+
+.photo1 {
+    max-width: 100%;
+    max-height: 100%;
+    flex-basis:0;
+    flex-grow:1;
+    /* border: solid;
+    border-color: blue; */
+    margin: auto;
+    
+}
+
+#photo1 {
+    /* max-width: 100%;
+    max-height: 100%;
+    flex-basis:0;
+    flex-grow:1; */
+    /* border: solid; */
+    border-color: blue;
+}
+
+.photo2 {
+    max-width: 100%;
+    flex-basis:0;
+    flex-grow:1;
+    border: solid;
+    
+}
+
+#photo2 {
+    /* max-width: 100%;
+    flex-basis:0;
+    flex-grow:1; */
+    /* border: solid; */
+}
+
+.photo3 {
+    max-width: 100%;
+    flex-basis:0;
+    flex-grow:1;
+    border: solid;
+}
+
+#photo3 {
+    /* max-width: 100%;
+    flex-basis:0;
+    flex-grow:1; */
+    /* border-top: 10px; */
+    /* border: solid; */
+}
+i {
+    vertical-align: middle;
+
+}
+
+
+
+
+/* Tech Blog */
+
+.head1 {
+    font-size: 3.5rem;
+    text-align: center;
+    color: rgb(43, 86, 207);
+}
+
