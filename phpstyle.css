@@ -1,0 +1,92 @@
+body{
+    background: white;
+}
+
+h1 {
+    color: blue;
+    text-align: center;
+    margin-top: 1.75rem;
+}
+h2 {
+    /* color: rgb(8, 51, 51); */
+    color: blue;
+}
+
+h3 {
+    text-align: center;
+}
+
+td {
+    width: 30px;
+    height: 3px;
+}
+
+.title1 {
+    color: green;
+    font-size: 3rem;
+    border-bottom: solid green;
+}
+
+.black {
+    background: #000;
+}
+
+.white {
+    background: white;
+}
+
+table{
+    margin: auto;
+    border: solid;
+    border-color: blue;
+ 
+}
+
+.outputText {
+    text-align: center;
+    color: green;
+    border: solid;
+    border-color: blue;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 1.75rem;
+    border-bottom: solid;
+    border-bottom-color: blue;
+
+}
+
+.cityMatcher {
+    text-align: center;
+    margin: auto;
+    /* border: solid; */
+    /* border-color: red; */
+
+}
+
+
+form {
+    color: blue;
+    margin: auto;
+    padding-left: 30%;
+    padding-right: 30%;
+    font-size: 1.5rem;
+}
+
+.AreaCode {
+    font-size: 1.5rem;
+}
+
+.game{
+    margin-bottom: 2rem;
+    border-bottom: solid;
+    padding-bottom: 1.5em;
+    border-bottom-color: green;
+
+}
+
+.firstPlayer {
+    text-align: center;
+}
