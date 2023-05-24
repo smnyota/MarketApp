@@ -56,7 +56,7 @@
 
     <div class = "rsorted">
         <h2>List of All Employees Sorted Reverse Alphabetically!</h2>
-        <h3>(Well.... Also Not All of Them lol)</h3>
+        <h3>(Well.... Also Not All of Thems lol)</h3>
         <h2>
             <?php
                 // $employeeList = ['Shangwe','Alex', 'Bracken', 'Casey','Elle', "Emily",'Tyler', 'Reno', 'Maddie'];
