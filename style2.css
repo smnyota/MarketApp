@@ -9,6 +9,35 @@
     text-align: center;
     
 }
+#warped div[class^=card]:nth-of-type(n+0)
+
+.tst>a {
+    color: hsl(252, 30%, 50%);
+
+}
+.tst:visited {
+    color: hsl(252, 30%, 50%);
+
+}
+.cHead {
+    text-align: center;
+    padding: 0;
+    margin-top: 2rem;
+    
+}
+/* .a {
+    color: white;
+}
+
+.a:visited {
+    color: white;
+} */
+
+a, a:link, a:visited, a:focus, a:hover, a:active{
+    color:white;
+    text-decoration:none;
+  }
+
 
 
 body {
@@ -29,6 +58,18 @@ h1 {
 
 h2 {
     margin-top: 2rem;
+    text-align: left;
+    margin-left: 3.5rem;
+    margin-bottom: 1.3rem;
+}
+
+.mainText {
+    /* border: solid; */
+    border-color: blue;
+    /* margin: 2rem; */
+    margin: 0.5rem 2rem;
+    padding: 0.7rem;
+    text-align: left;
 }
 .hd {
     align-self: center;
@@ -125,6 +166,7 @@ nav .button {
     margin-bottom: 2.5rem;
     color: red;
     /* align-items: stretch; */
+    margin-top: 0;
 }
 
 .card {
@@ -323,3 +365,80 @@ i {
     font-size: 1rem;
     /* border-radius: 0; */
 }
+
+.commentHeader {
+    font-size: 2rem;
+    border-bottom: solid;
+    border-color: black;
+
+}
+
+.commentSection {
+    text-align: center;
+    font-size: 2.75rem;
+    display: flex;
+    flex-direction: column;
+    /* color: red; */
+}
+
+.commentBlock {
+    display: flex;
+    flex-direction: column;
+    border: solid;
+    border-color: black;
+    align-items: flex-start;
+    /* padding: 0; */
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: white;
+}
+
+
+
+.formBlock {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40%;
+    margin-right: 40%;
+    /* background-color: white; */
+}
+
+input[type=submit] {
+    /* padding:5px 15px;  */
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    margin-left: 20%;
+    margin-right: 20%;
+ 
+}
+
+.textWrap {
+    display: flex;
+    flex-direction: column;
+    /* border: solid; */
+    background-color: white;
+    /* border-color: red; */
+}
+.author {
+    /* border: solid; */
+    /* border-color: green; */
+    /* background-color: rgb(196, 188, 188); */
+    border-radius:20px;
+    /* padding-right: 20px; */
+    color: red;
+    font-size: 1.4rem;
+    text-align: left;
+    
+
+}
+form {
+    /* background-color: white; */
+}
+.commentText {
+    margin-bottom: .5rem;
+    /* margin-left: 100px; */
+}
+

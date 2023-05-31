@@ -5,4 +5,5 @@
     DEFINE('DB_USERNAME', 'root');
     DEFINE('DB_PASSWORD', 'root');
     echo "you!";
-    include("db_query.php");
+
+    
