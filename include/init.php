@@ -3,4 +3,5 @@
     session_start();
     include('include/connect.php');
     include('include/db_query.php');
+    include('include/helper_functions.php');
     ?>
