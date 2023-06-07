@@ -12,15 +12,14 @@
         $conditionInput = $_POST['conditionInput'];
         $phoneNumberInput = $_POST['phoneNumberInput'];
         $categoryInput = $_POST['categoryInput'];
-        //should probably use ternary operator here
+        $imageFile = $_POST['fileToUpload']; //Currently there is no image file support atm (S3 In the Future?)
+        //should probably just use the ternary operator here
         if (isset($_POST['deliveredInput'])) {
             $deliveryAvailable = 'Yes';
         } else {
             $deliveryAvailable = 'No';
         }
-
-        $verifiedUser = verifyUser($emailInput, $phoneNumberInput);
-
+        $verifiedUser = verifyUser($emailInput, $phoneNumberInput); 
         if ($verifiedUser) {
         $sellerId = $verifiedUser['userId'];
         insertProduct($postingTitle, $price, $description, $sellerId, $location, $zipCode, $categoryInput, $deliveryAvailable, $conditionInput);
@@ -31,7 +30,7 @@
     }
 
 ?>
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
         <head>
             <meta charset="UTF-8">
@@ -43,7 +42,7 @@
         </head>
         <body>
             <div>
-                <form action="" method = 'post'>
+                <form action="" method = 'post' enctype="multipart/form-data"> <!-- Comment out if needed -->
                     <div class = 'flexContainer'>
 
                         <div class = 'row1Container'>
@@ -85,7 +84,7 @@
                                                 <input type="text" class = 'field' name = 'emailInput' placeholder = 'johndoe@gmail.com' required><br/>
                                                 <label for="conditionInput">Condition</label><br/>
                                                         <select name="conditionInput">
-                                                            <option value="-">-</option>
+                                                            <option value="-">-</option> <!-- I'm not too sure how to prevent a user from selecting this-->
                                                             <option value ="Brand New">Brand New</option>
                                                             <option value="Like New">Like New</option>
                                                             <option value="Good">Good</option>
@@ -100,16 +99,16 @@
                                                 <div class="label">Phone Number</div>
                                                 <input type="text" class = 'field' name = 'phoneNumberInput' placeholder = '123-456-7890' required><br/>
                                                 <label for="categoryInput">Category</label><br/>
-                                                        <select name="categoryInput" id="">
-                                                            <option value="-" selected>-</option>
-                                                            <option value="Appliances">Appliances</option>
-                                                            <option value="Bookes, movies, & Music">Bookes, movies, & Music</option>
-                                                            <option value="Clothing, Shoes, & Accessories">Clothing, Shoes, & Accessories</option>
-                                                            <option value="Electronics">Electronics</option>
-                                                            <option value="Health & Beauty">Health & Beauty</option>
-                                                            <option value="Miscellaneous">Miscellaneous</option>
-                                                            <option value="Pet Supplies">Pet Supplies</option>
-                                                        </select>
+                                                    <select name="categoryInput" id="">
+                                                        <option value="-" selected>-</option>
+                                                        <option value="Appliances">Appliances</option>
+                                                        <option value="Bookes, movies, & Music">Bookes, movies, & Music</option>
+                                                        <option value="Clothing, Shoes, & Accessories">Clothing, Shoes, & Accessories</option>
+                                                        <option value="Electronics">Electronics</option>
+                                                        <option value="Health & Beauty">Health & Beauty</option>
+                                                        <option value="Miscellaneous">Miscellaneous</option>
+                                                        <option value="Pet Supplies">Pet Supplies</option>
+                                                    </select>
                                             </div>
                                         </div>
 
@@ -119,6 +118,8 @@
                                                 <label for="">Delivery Available</label><br>
                                                 <input type="checkbox" id="" name="contactOkInput" value="">
                                                 <label for="">Ok for others to contact you about other products or services posted</label><br>
+                                                <!-- Image Uploading: No real functionality atm -->
+                                                <input type="file" name = 'fileToUpload' required>
                                             </div>
                                         </div>
                                     </div>

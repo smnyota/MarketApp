@@ -1,5 +1,9 @@
 <?php
     include('include/init.php');
+    function passImage($image) {
+        echo $image;
+    }
+    // echo $imageFile;
 ?>
     <link rel='stylesheet' href='style2.css' />
     <h1>All Products</h1>
@@ -21,11 +25,11 @@
         echo "
                 <div class='gallery'>
                     <a target='_blank' href='#'>
-                         <img src='images/placeholder.png' width='600' height='400'>
+                         <img src='images/placeholder.png' width='600' height='400'> 
                         <div class='desc'>$title<br>$location<br>$$price</div>
                     </a>
                 </div>
-        ";
+        "; //will update the image tag
 
     }
 ?>

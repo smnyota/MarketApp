@@ -1,8 +1,8 @@
 <?php
 include('include/init.php');
-
 ?>
 
+<!-- Ignore this page: This code was refactored and turned into allPost2.php -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,8 +49,6 @@ include('include/init.php');
         <div class="desc">Add a description of the image here</div>
     </a>
 </div>
-
-
 
 </body>
 </html>
