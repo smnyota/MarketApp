@@ -1,0 +1,37 @@
+
+.flexContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6.75rem;
+    margin-left: 13rem;
+    margin-right: 13rem;
+}
+
+.row1Container {
+    display: flex;
+    justify-content: space-between;
+}
+
+textarea {
+    width: 100%; 
+}
+
+.row3ContainerInnerFieldSet {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.column1 {
+    margin-left: .2rem;
+}
+
+.column3 {
+    margin-right: .6rem;
+}
+
+.submitButton {
+    width: 8rem;
+    align-self: flex-end;
+    margin-top: .45rem;
+}
