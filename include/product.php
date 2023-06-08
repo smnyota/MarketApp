@@ -37,7 +37,7 @@
         ]);
     }
 
-    function verifyUser($email, $phoneNumber) {
+    function getUser($email, $phoneNumber) {
         $user = dbQuery ( "
         SELECT * FROM `user` WHERE `email` = '$email' and `phoneNumber` = '$phoneNumber'
         ")->fetch();  

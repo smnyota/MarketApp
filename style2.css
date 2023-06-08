@@ -1,10 +1,15 @@
+* {
+}
 div.gallery {
     margin: 5px;
     border: 1px solid #ccc;
     float: left;
     width: 180px;
-   
+    /* flex-grow: 1; */
+
   }
+
+
   
   div.gallery:hover {
     border: 1px solid #777;
@@ -27,8 +32,11 @@ div.gallery {
 
   .container {
     display: flex;
-    border: solid;
+    /* border: solid; */
     width: 60%;
+    /* max-width: 60%; */
+    /* width: 50rem; */
+
     margin: auto;
     flex-direction: row;
     flex-wrap: wrap;
@@ -38,6 +46,12 @@ div.gallery {
     column-gap: 25.5px; /* change this value if gallery width is adjusted */
    
   }
+
+  .container::after {
+    content: '';
+    flex-grow: 1000000000;
+  }
+
 
   h1 {
     text-align: center;

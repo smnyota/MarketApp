@@ -1,11 +1,8 @@
 <?php
     include('include/init.php');
-    function passImage($image) {
-        echo $image;
-    }
-    // echo $imageFile;
 ?>
     <link rel='stylesheet' href='style2.css' />
+    <script src = 'file'></script>
     <h1>All Products</h1>
     <body> 
         <div class = 'container'>
@@ -15,13 +12,13 @@
                     $title = $posts['postingTitle'];
                     $price = $posts['price'];
                     $location = $posts['location'];
-                    echoPosts($title, $price, $location);
+                    echoPost($title, $price, $location);
                 }
             ?>
         </div>
     </body>
 <?php
-    function echoPosts ($title, $price, $location) {
+    function echoPost ($title, $price, $location) {
         echo "
                 <div class='gallery'>
                     <a target='_blank' href='#'>
@@ -29,7 +26,7 @@
                         <div class='desc'>$title<br>$location<br>$$price</div>
                     </a>
                 </div>
-        "; //will update the image tag
+        "; //Note to Self: must update the image tag
 
     }
 ?>

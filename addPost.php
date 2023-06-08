@@ -12,14 +12,13 @@
         $conditionInput = $_POST['conditionInput'];
         $phoneNumberInput = $_POST['phoneNumberInput'];
         $categoryInput = $_POST['categoryInput'];
-        $imageFile = $_POST['fileToUpload']; //Currently there is no image file support atm (S3 In the Future?)
-        //should probably just use the ternary operator here
+        // $imageFile = $_POST['fileToUpload']; //Currently there is no image file support atm (S3 In the Future?)
         if (isset($_POST['deliveredInput'])) {
             $deliveryAvailable = 'Yes';
         } else {
             $deliveryAvailable = 'No';
         }
-        $verifiedUser = verifyUser($emailInput, $phoneNumberInput); 
+        $verifiedUser = getUser($emailInput, $phoneNumberInput); 
         if ($verifiedUser) {
         $sellerId = $verifiedUser['userId'];
         insertProduct($postingTitle, $price, $description, $sellerId, $location, $zipCode, $categoryInput, $deliveryAvailable, $conditionInput);
@@ -44,13 +43,11 @@
             <div>
                 <form action="" method = 'post' enctype="multipart/form-data"> <!-- Comment out if needed -->
                     <div class = 'flexContainer'>
-
                         <div class = 'row1Container'>
                             <div class = 'row1'>
                                 <div class="label">Posting Title</div>
                                 <input type="text" class = 'field' name = 'postingTitle' placeholder = 'ex: MiniFridge' required><br/>
                             </div>
-
                             <div class = 'row1'>
                                 <div class="label">Price</div>
                                 $<input type="number" class = 'field' name = 'price' placeholder = '' required><br/>
@@ -84,11 +81,11 @@
                                                 <input type="text" class = 'field' name = 'emailInput' placeholder = 'johndoe@gmail.com' required><br/>
                                                 <label for="conditionInput">Condition</label><br/>
                                                         <select name="conditionInput">
-                                                            <option value="-">-</option> <!-- I'm not too sure how to prevent a user from selecting this-->
+                                                            <option value="-" hidden>Choose Condition</option> <!-- I'm not too sure how to prevent a user from selecting this-->
                                                             <option value ="Brand New">Brand New</option>
                                                             <option value="Like New">Like New</option>
                                                             <option value="Good">Good</option>
-                                                            <option value="Fiar">Fair</option>
+                                                            <option value="Fair">Fair</option>
                                                             <option value="Salvage">Salvage</option>
                                                         </select>
                                             </div>
@@ -100,7 +97,7 @@
                                                 <input type="text" class = 'field' name = 'phoneNumberInput' placeholder = '123-456-7890' required><br/>
                                                 <label for="categoryInput">Category</label><br/>
                                                     <select name="categoryInput" id="">
-                                                        <option value="-" selected>-</option>
+                                                        <option value="-" hidden>Choose Category</option> <!-- I'm not too sure how to prevent a user from selecting this-->
                                                         <option value="Appliances">Appliances</option>
                                                         <option value="Bookes, movies, & Music">Bookes, movies, & Music</option>
                                                         <option value="Clothing, Shoes, & Accessories">Clothing, Shoes, & Accessories</option>
@@ -119,7 +116,7 @@
                                                 <input type="checkbox" id="" name="contactOkInput" value="">
                                                 <label for="">Ok for others to contact you about other products or services posted</label><br>
                                                 <!-- Image Uploading: No real functionality atm -->
-                                                <input type="file" name = 'fileToUpload' required>
+                                                <input type="file" name = 'fileToUpload'>  <!--the file name doesn't appear in the POST variable: look into this later -->
                                             </div>
                                         </div>
                                     </div>
