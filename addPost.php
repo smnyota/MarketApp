@@ -23,7 +23,9 @@
         insertProduct($postingTitle, $price, $description, $sellerId, $location, $zipCode, $categoryInput, $deliveryAvailable, $conditionInput);
         } else {
             echo 'Please Login Before Trying to Post an Item!'; 
-            //This case should (almost) never occur... atm I plan on having users registering or logging in before making a post.
+             //Note for the future: redirect to login.php
+                //Also for the future: improving the User interface as they recieve the message and redirect to other page is worth looking into
+            exit();
         }
     }
 
@@ -40,7 +42,7 @@
         </head>
         <body>
             <div>
-                <form action="" method = 'post' enctype="multipart/form-data"> <!-- Comment out enctype if needed -->
+                <form action="" method = 'post'> 
                     <div class = 'flexContainer'>
                         <div class = 'row1Container'>
                             <div class = 'row1'>
