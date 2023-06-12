@@ -37,6 +37,7 @@
         ]);
     }
 
+     //If the query does not return any results, the function returns false (bool)
     function getUser($email, $phoneNumber) {
         $user = dbQuery ( "
         SELECT * FROM `user` WHERE `email` = '$email' and `phoneNumber` = '$phoneNumber'

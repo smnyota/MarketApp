@@ -2,7 +2,6 @@
     include('include/init.php');
 
     if(isset($_POST['postItem'])) {
-        // var_dump($_POST);
         $postingTitle = $_POST['postingTitle'];
         $price = $_POST['price'];
         $location = $_POST['location'];
@@ -41,7 +40,7 @@
         </head>
         <body>
             <div>
-                <form action="" method = 'post' enctype="multipart/form-data"> <!-- Comment out if needed -->
+                <form action="" method = 'post' enctype="multipart/form-data"> <!-- Comment out enctype if needed -->
                     <div class = 'flexContainer'>
                         <div class = 'row1Container'>
                             <div class = 'row1'>
@@ -81,7 +80,7 @@
                                                 <input type="text" class = 'field' name = 'emailInput' placeholder = 'johndoe@gmail.com' required><br/>
                                                 <label for="conditionInput">Condition</label><br/>
                                                         <select name="conditionInput">
-                                                            <option value="-" hidden>Choose Condition</option> <!-- I'm not too sure how to prevent a user from selecting this-->
+                                                            <option value="-" hidden>Choose Condition</option> 
                                                             <option value ="Brand New">Brand New</option>
                                                             <option value="Like New">Like New</option>
                                                             <option value="Good">Good</option>
@@ -97,7 +96,7 @@
                                                 <input type="text" class = 'field' name = 'phoneNumberInput' placeholder = '123-456-7890' required><br/>
                                                 <label for="categoryInput">Category</label><br/>
                                                     <select name="categoryInput" id="">
-                                                        <option value="-" hidden>Choose Category</option> <!-- I'm not too sure how to prevent a user from selecting this-->
+                                                        <option value="-" hidden>Choose Category</option> 
                                                         <option value="Appliances">Appliances</option>
                                                         <option value="Bookes, movies, & Music">Bookes, movies, & Music</option>
                                                         <option value="Clothing, Shoes, & Accessories">Clothing, Shoes, & Accessories</option>
@@ -116,7 +115,7 @@
                                                 <input type="checkbox" id="" name="contactOkInput" value="">
                                                 <label for="">Ok for others to contact you about other products or services posted</label><br>
                                                 <!-- Image Uploading: No real functionality atm -->
-                                                <input type="file" name = 'fileToUpload'>  <!--the file name doesn't appear in the POST variable: look into this later -->
+                                                <input type="file" name = 'fileToUpload'>  
                                             </div>
                                         </div>
                                     </div>

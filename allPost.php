@@ -26,7 +26,7 @@
                         <div class='desc'>$title<br>$location<br>$$price</div>
                     </a>
                 </div>
-        "; //Note to Self: must update the image tag
+        "; //Note to Self: must update the image tag 
 
     }
 ?>
