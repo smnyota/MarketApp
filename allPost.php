@@ -1,9 +1,9 @@
 <?php
     include('include/init.php');
 ?>
-    <link rel='stylesheet' href='style2.css' />
+    <link rel='stylesheet' href='style.css' />
     <script src = 'file'></script>
-    <h1>All Products</h1>
+    <h1 class = 'displayPostHeader'>All Products</h1>
     <body> 
         <div class = 'container'>
             <?php

@@ -1,5 +1,5 @@
-* {
-}
+
+/* This has been moved/refactored to style.css-just saving for future use if necessary */
 div.gallery {
     margin: 5px;
     border: 1px solid #ccc;
@@ -9,8 +9,6 @@ div.gallery {
 
   }
 
-
-  
   div.gallery:hover {
     border: 1px solid #777;
   }
@@ -53,6 +51,6 @@ div.gallery {
   }
 
 
-  h1 {
+  .displayPostHeader {
     text-align: center;
   }

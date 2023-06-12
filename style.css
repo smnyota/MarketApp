@@ -35,3 +35,60 @@ textarea {
     align-self: flex-end;
     margin-top: .45rem;
 }
+
+/* Product Display Page*/
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+    /* flex-grow: 1; */
+
+  }
+
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }
+
+  a {
+    text-decoration:none;
+    color: rgb(12, 12, 48);
+  }
+
+  .container {
+    display: flex;
+    /* border: solid; */
+    width: 60%;
+    /* max-width: 60%; */
+    /* width: 50rem; */
+
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* align-content: space-between; */
+    /* row-gap: 10px; */
+    column-gap: 25.5px; /* change this value if gallery width is adjusted */
+   
+  }
+
+  .container::after {
+    content: '';
+    flex-grow: 1000000000;
+  }
+
+
+  .displayPostHeader {
+    text-align: center;
+  }
