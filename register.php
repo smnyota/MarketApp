@@ -10,14 +10,18 @@ if(isset($_POST['login'])) {
 
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
-    $email = $_POST['email'];
+    $email = strtolower($_POST['email']); 
     $phoneNumber = $_POST['phoneNumber'];
     $password = $_POST['password'];
+    
+    if (getUserFromEmail($email)) {
+        echo 'Email Already Exists in Database';
+        exit();
+    } 
 
+    insertUser($email, $phoneNumber, $firstName, $lastName);  //inserts user into MySQL table
     
-//    insertUser($firstName, $lastName, $email, $userName, $password);
-    
-    $_SESSION['id'] = getUser($email, $phoneNumber)['id']; 
+    $_SESSION['id'] = getUser($email, $phoneNumber)['userId']; //sets the Session variable
    
     var_dump($_SESSION);
    

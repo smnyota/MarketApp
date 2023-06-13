@@ -37,6 +37,7 @@
         ]);
     }
 
+
      //If the query does not return any results, the function returns false (bool)
     function getUser($email, $phoneNumber) {
         $user = dbQuery ( "
@@ -45,5 +46,27 @@
         return $user;
     }
 
+
+
+    function insertUser($email, $phoneNumber, $firstName, $lastName){
+        dbQuery("
+            INSERT INTO user(email, phoneNumber, firstName, lastName)
+            VALUES(:email, :phoneNumber, :firstName, :lastName)
+        ", [
+            'email' => $email,
+            'phoneNumber' => $phoneNumber,
+            'firstName' => $firstName,
+            'lastName' => $lastName
+        ]);
+    }
+
+
+    //If the inputted email is not in the table, the function returns false
+    function getUserFromEmail($email) {
+        $user = dbQuery ( "
+        SELECT * FROM `user` WHERE `email` = '$email'
+        ")->fetch();  
+        return $user;
+    }
 
   
