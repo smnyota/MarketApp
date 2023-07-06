@@ -1,4 +1,5 @@
 
+
 .flexContainer {
     display: flex;
     flex-direction: column;
@@ -80,6 +81,7 @@ div.gallery {
     /* align-content: space-between; */
     /* row-gap: 10px; */
     column-gap: 25.5px; /* change this value if gallery width is adjusted */
+    
    
   }
 
@@ -92,3 +94,20 @@ div.gallery {
   .displayPostHeader {
     text-align: center;
   }
+
+
+
+
+
+.mainCard {
+  margin-top: 2rem;
+  margin-left: 20rem;
+  margin-right: 20rem;
+  margin-bottom: 5rem;
+  padding: 1rem;
+  border: solid;
+  border-radius: 15px;
+  background-color: white;
+}
+
+
