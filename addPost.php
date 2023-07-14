@@ -1,12 +1,8 @@
 <?php
     include('include/init.php');
-    //redirects unlogged in users to the login page
-    if(!array_key_exists('userId', $_SESSION)) {
-        header("Location: sign-in.php?location=addPost");
-        exit();
-    } 
+    echoPosting();
+    redirectUser('sign-in.php?location=addPost');
     if(isset($_POST['postItem'])) {
-        //redirect User's who have not logged in to the login page
         $postingTitle = $_POST['postingTitle'];
         $price = $_POST['price'];
         $location = $_POST['location'];
@@ -22,33 +18,17 @@
         }
      
         $sellerId = $_SESSION['userId'];
-        insertProduct($postingTitle, $price, $description, $sellerId, $location, $zipCode, $categoryInput, $deliveryAvailable, $conditionInput);
-        //Will need to adjust this insertion process: delte the Category name!!
+        $uploadSuccess = insertProduct($postingTitle, $price, $description, $sellerId, $location, $zipCode, $categoryInput, $deliveryAvailable, $conditionInput);
+        debugOutput($uploadSuccess);
+        if($uploadSuccess == NULL) {
+          header("Location: viewproduct.php");
+          exit();
+        } else {
+          header("Location: addPost.php");
+        }
     }
 ?>
-<!doctype html>
-<html lang="en" data-bs-theme="auto">
-  <head><script src="../assets/js/color-modes.js"></script>
 
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-    <title>WashUList</title>
-
-    <!--Currently Working on Cleaning Up Stylesheets-->
-     <!-- Font awesome Icon CDN -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
-     <!--Still Need To Refactor this CSS-->
-     <link rel="stylesheet" href="searchbar.css" />
-     <link href="/examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-     <link href="/carousel.css" rel="stylesheet">
-     <link href="/examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-     <!-- Finished Refactoring This CSS -->
-     <link href="headers.css" rel="stylesheet">
-     <link href="style.css" rel="stylesheet">
-     <!--Custom Font-->
-    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
 <body>
   <main>
     <div class="container">
@@ -65,40 +45,9 @@
           <li><a href="#" class="nav-link px-2">FAQs</a></li>
           <li><a href="#" class="nav-link px-2">About</a></li>
         </ul>
-
         <div class="col-md-3 text-end">
-          <!-- <button type="button" class="btn btn-outline-primary me-2">Login</button> -->
         <?php echo '<a href="logout.php"><button type="button" class="btn btn-primary">Logout</button></a>';?>
-          <!-- <a href="register.php"><button type="button" class="btn btn-primary">Home</button></a> -->
         </div>
-        <!--Search Bar Start-->
-        <!--Search Bar will likely be removed from this page, it's nice for asthetic desgin but not too practical imo-->
-        <div class = 'search-bar'>
-          <div class = 'dropdown'>
-                  <div id = "drop-text" class = 'dropdown-text'>
-                      <span id = "span">All Categories</span>
-                      <i id = "icon" class="fa-solid fa-chevron-down"></i>
-                  </div>
-                  <ul id="list" class="dropdown-list">
-                      <li class="dropdown-list-item">All Categories</li>
-                      <li class="dropdown-list-item">Appliances</li>
-                      <li class="dropdown-list-item">Books, Movies, & Music</li>
-                      <li class="dropdown-list-item">Clothing, Shoes, & Accessories</li>
-                      <li class="dropdown-list-item">Electronics</li>
-                      <li class="dropdown-list-item">Health & Beauty</li>
-                      <li class="dropdown-list-item">Pet Supplies</li>
-                      <li class="dropdown-list-item">Miscellaneous</li>
-                  </ul>  
-          </div>
-          <!--Dropdown ends-->
-          <div class=" search-box">
-              <input type="text" id="search-input" placeholder="Search in All Categories...">
-              <i class="fa-solid fa-magnifying-glass"></i>
-
-          </div>
-        </div>
-    <!--Search bar ends also don't forget to remove sear-->
-        <script src="searchbar.js"></script>
       </header>
     </div>
   </main>

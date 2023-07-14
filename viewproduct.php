@@ -1,24 +1,7 @@
 <?php
 include('include/init.php');
+echoHeader();
 ?>
-
-<!doctype html>
-<html lang="en" data-bs-theme="auto">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WashUList</title>
-    <!--searchbarstylesheet-->
-     <!-- Font awesome Icon CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
-  <link rel="stylesheet" href="searchbar.css" />
-  <link href="/examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/carousel.css" rel="stylesheet">
-  <link href="/examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <!-- Custom styles for this template -->
-    <link href="headers.css" rel="stylesheet">
-    <!--Custom Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
 <main>
  <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
@@ -74,8 +57,14 @@ include('include/init.php');
     </div>
   </nav>
 </div>
+
 <input class="form-control" id="myInput" type="text" placeholder="Search..">
+<div class='album py-5 bg-body-tertiary'>
+      <div class='container'>
+      <div class='row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3' id='myDIV'>
 <span id="page_details"></span>
+</div>
+
 </html>
 
 <!--Jquery ajax -->
@@ -92,7 +81,7 @@ $(document).ready(function(){
    }
   });
  }
-
+ //Defaults to loading page id=1 first (Appliances)
  load_page_details(1);
 
  $('.nav li').click(function(){
@@ -116,4 +105,46 @@ $(document).ready(function(){
     });
   });
   </script>
+
+
+<!--When user presses saved posts button, ajax call is made to savedPost.php to add the specific post to the savedPost database table-->
+<script type="text/javascript">
+	function savePost(userLoggedIn, userId, productId){
+    console.log(userLoggedIn);
+    if(userLoggedIn == true){
+		// URL to which the AJAX call will be made
+		const url = "/savedPost.php";
+
+		// Data object containing the POST parameters
+		let data = new URLSearchParams();
+        data.append("userId",userId);
+        data.append("productId",productId);
+
+		// Options for the AJAX call
+		const options = {
+		method: "POST",
+		body: data,
+		};
+
+		// Making the AJAX call
+		fetch(url, options)
+		.then(response => {
+			return response.text(); 
+		})
+		.then(data => {
+			// Might add a star icon next to the save item button on the card in this case
+			
+		})
+		.catch(error => {
+			// Handle any errors that occurred during the AJAX call
+			console.error("Error:", error);
+		}); 
+  } else {
+    //Test Case
+    console.log("not logged in");
+  }
+
+  } 
+	
+</script>
 

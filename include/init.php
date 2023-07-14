@@ -6,4 +6,5 @@
     include('include/db_query.php');
     include('include/helper_functions.php');
     include('include/product.php');
+    include('include/common_components.php');
     ?>

@@ -1,6 +1,6 @@
 <?php
 include('include/init.php');
-
+echoUserHeader();
 if(isset($_POST['login'])) {
     $_SESSION =[];
     $firstName = $_POST['firstName'];
@@ -20,9 +20,7 @@ if(isset($_POST['login'])) {
     }
 }
 ?>
-    <link rel='stylesheet' href='sign-in.css' />  
-    <link href="/examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="sign-in.css" rel="stylesheet">
+  
     <section class="vh-100 bg-image" style="background-color: #007bff;">
         <div class="mask d-flex align-items-center h-100 gradient-custom-3">
             <div class="container h-100"> <!--Could make this 95...both 100 and 95 look fine-->

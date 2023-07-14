@@ -1,6 +1,7 @@
 
 <?php
     include('include/init.php');
+    echoUserHeader();
     $alert=[];
     if (array_key_exists("location",$_REQUEST))
         {
@@ -38,15 +39,6 @@
         }
     }
 ?>
-
-
-<!doctype html>
-<html lang="en" data-bs-theme="auto">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WashUList Sign-In</title>
-    <link href="/examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="sign-in.css" rel="stylesheet">
 
 <body>
   <section class="vh-100" style="background-color: #007bff;">
