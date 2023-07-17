@@ -10,7 +10,29 @@
         $description = $_POST['description'];
         $conditionInput = $_POST['conditionInput'];
         $categoryInput = $_POST['categoryInput'];
-        // $imageFile = $_POST['fileToUpload']; //Currently there is no image file support atm (S3 In the Future)
+        $file = $_FILES['file'];
+
+        $fileName = $file['name'];
+        $fileTmpName = $file['tmp_name'];
+        $fileSize = $file['size'];
+        $fileError = $file['error'];
+        $fileType = $file['type'];
+
+        $splitFileName = explode('.', $fileName); //splits the fileName by period
+        $filteredFileExtension = strtolower(end($splitFileName)); //grabs the file extension
+
+        //Currently allowing all file types and sizes
+        if($fileError == 0) {
+
+          $fileNameNew = uniqid('', true).".".$filteredFileExtension; //creates unique id for image based on current time in microseconds (eliminates chance of repeated random #)
+          $fileDestination = '/Applications/MAMP/htdocs/images/'.$fileNameNew; 
+          move_uploaded_file($fileTmpName, $fileDestination); //moves to images file
+          $dbFileName = '/'.'images/'.$fileNameNew; //name for file in DB
+        } else {
+          echo "There was an error uploading your image!";
+          header("Location: addPost.php?uploadFailure");
+        }
+
         if (isset($_POST['deliveredInput'])) {
             $deliveryAvailable = 'Yes';
         } else {
@@ -18,7 +40,7 @@
         }
      
         $sellerId = $_SESSION['userId'];
-        $uploadSuccess = insertProduct($postingTitle, $price, $description, $sellerId, $location, $zipCode, $categoryInput, $deliveryAvailable, $conditionInput);
+        $uploadSuccess = insertProduct($postingTitle, $price, $description, $sellerId, $location, $zipCode, $categoryInput, $deliveryAvailable, $conditionInput, $dbFileName);
         debugOutput($uploadSuccess);
         if($uploadSuccess == NULL) {
           header("Location: viewproduct.php");
@@ -94,7 +116,7 @@
   </nav>
 </div>
 <div>
-  <form action="" method = 'post'> 
+  <form action="" method = 'POST' enctype="multipart/form-data"> 
       <div class = 'flexContainer'>
         <div class = 'row1Container'>
             <div class = 'row1'>
@@ -158,7 +180,8 @@
                                 <label for="">Delivery Available</label><br>
                                 <input type="checkbox" id="" name="contactOkInput" value="">
                                 <label for="">Ok for others to contact you about other products or services posted</label><br>
-                                <input type="file" name = 'fileToUpload'>Upload Image 
+                                <!--File Type-->
+                                <input type="file" name = 'file'>Upload Image 
                             </div>
                         </div>
                     </div>

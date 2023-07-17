@@ -11,17 +11,17 @@
 
   //This case is only for displaying Saved Items
       foreach($savedPosts as $saved) {
-    
         $prodId = $saved["productId"];
         $product = getProduct($prodId);
         $title = $product["postingTitle"];
         $price = $product["price"];
         $location = $product["location"];
+        $image = $product["image"];
         
     $customOutput .= '
     <div class="col">
       <div class="card shadow-sm">
-      <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="/images/placeholder.png" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+      <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="'.$image.'" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
       <div class="card-body">
         <p class="card-text">'.$title.'</p>
         <p class="card-text">'.$price.'</p>
@@ -66,7 +66,7 @@
     $output .= '
     <div class="col">
       <div class="card shadow-sm">
-      <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="/images/placeholder.png" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+      <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="'.$post["image"].'" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></img>
       <div class="card-body">
         <p class="card-text">'.$post["postingTitle"].'</p>
         <p class="card-text">'.$post["price"].'</p>
@@ -83,7 +83,7 @@
   </div>
     ';
   }
-  
+
   // echo "
   // <div class='album py-5 bg-body-tertiary'>
   //     <div class='container'>

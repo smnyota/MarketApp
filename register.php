@@ -15,7 +15,7 @@ if(isset($_POST['login'])) {
     } else {
         //Successfuly inserts user into MySQL table and sends them to the home page
         insertUser($email, $phoneNumber, $firstName, $lastName, $hashedPassword); 
-        header("Location: index.html");
+        header("Location: index.php");
         die();
     }
 }

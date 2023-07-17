@@ -21,10 +21,10 @@
     }
 
 
-    function insertProduct($postingTitle, $price, $description, $sellerId, $location, $postalCode, $categoryId, $deliveryAvailable, $productCondition){
+    function insertProduct($postingTitle, $price, $description, $sellerId, $location, $postalCode, $categoryId, $deliveryAvailable, $productCondition, $image){
         dbQuery("
-            INSERT INTO product(postingTitle, price, description, sellerId, location, postalCode, categoryId, deliveryAvailable, productCondition)
-            VALUES(:postingTitle, :price, :description, :sellerId, :location, :postalCode, :categoryId, :deliveryAvailable, :productCondition)
+            INSERT INTO product(postingTitle, price, description, sellerId, location, postalCode, categoryId, deliveryAvailable, productCondition, image)
+            VALUES(:postingTitle, :price, :description, :sellerId, :location, :postalCode, :categoryId, :deliveryAvailable, :productCondition, :image)
         ", [
             'postingTitle' => $postingTitle,
             'price' => $price,
@@ -34,7 +34,8 @@
             'postalCode' => $postalCode,
             'categoryId' => $categoryId,
             'deliveryAvailable' => $deliveryAvailable,
-            'productCondition' => $productCondition
+            'productCondition' => $productCondition,
+            'image' => $image
         ]);
     }
 

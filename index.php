@@ -120,7 +120,7 @@
         <div class="container">
           <div class="carousel-caption text-end">
             <h1>Trusted Marketplace</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, laudantium pariatur. Labore, quisquam.</p>
+            <p>All you need for quick, safe, and reliable transactions.</p>
             <p><a class="btn btn-lg btn-primary" href="#">Create a Posting</a></p>
           </div>
         </div>
@@ -176,8 +176,8 @@
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-primary-emphasis">Electronics</strong>
-          <h3 class="mb-0">Lorem ipsum dolor sit amet.</h3>
-          <div class="mb-1 text-body-secondary">Lorem ipsum dolor sit amet.</div>
+          <h3 class="mb-0">Explore Cutting Edge Technology.</h3>
+          <div class="mb-1 text-body-secondary">View Great Summer Deals!</div>
           <p class="card-text mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae non deserunt aperiam a quia hic cumque facere. Officia vitae eaque, similique consequuntur ullam error consectetur magnam quas autem natus assumenda?</p>
           <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
             Explore Electronics
