@@ -69,13 +69,14 @@
         return $user;
     }
 
-
+    
     function displayCategory($categoryId) {
         $product = dbQuery ( "
         SELECT * 
         FROM `categories` 
         INNER JOIN product ON categories.categoryId=product.categoryId
-        WHERE categories.categoryId=$categoryId;
+        WHERE categories.categoryId=$categoryId
+        ORDER BY product.productId DESC
         ")->fetchAll();  
         return $product;
     }

@@ -16,6 +16,8 @@ function echoHeader() {
       <link href="/examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
       <link href="headers.css" rel="stylesheet">
+      <link href="style.css" rel="stylesheet">
+
         <!--Google Custom Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
         </head>
@@ -46,13 +48,60 @@ function echoPosting() {
         ';
 }
 
+function echoBlackNavBar() {
+    echo '
+    <!--SECOND HEADER-->
+    <div class = "blackHeader">
+      <!--May need to remove stickytop: style preference-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="viewproduct.php">All Posts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Recently Viewed</a>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link active" aria-current="page" href="#">Appliances</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Books, Movies, & Music</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Clothing, Shoes, & Accessories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Electronics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Health & Beauty</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Miscellaneous</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Pet Supplies</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    ';
+}
+
 
 
 function verifyUser() {
     return array_key_exists("userId", $_SESSION);
 }
 
-function redirectUser($redirectUrl) {
+function redirectIfNotLoggedIn($redirectUrl) {
     if(!verifyUser()) {
         header("Location: $redirectUrl");
         exit();
@@ -73,6 +122,82 @@ function echoUserHeader() {
         <link href="sign-in.css" rel="stylesheet">
         </head>
         ';
+}
+
+function echoMainHeader() {
+   echo '
+   <main>
+ <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="index.php" class="d-inline-flex link-body-emphasis text-decoration-none">
+          <img src="/images/random.png" width ="230" height = "56" class = "specific" alt="Picture">
+        </a>
+      </div>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="index.php" class="nav-link px-2">Home</a></li>
+        <li><a href="viewproduct.php" class="nav-link px-2 link-secondary">Shop</a></li>
+        <li><a href="#" class="nav-link px-2">Features</a></li>
+        <li><a href="#" class="nav-link px-2">FAQs</a></li>
+        <li><a href="#" class="nav-link px-2">About</a></li>
+      </ul>
+      <div class="col-md-3 text-end">
+      ';
+          if (verifyUser()) {
+            echo '
+                  <a href="logout.php"><button type="button" class="btn btn-primary">Logout</button></a>
+                  <a href="addPost.php"><button type="button" class="btn btn-primary">Add Posting</button></a>
+                  <a href="register.php"><button type="button" class="btn btn-primary">New User</button></a>
+                ';
+          } else {
+            echo '
+                <a href="sign-in.php"><button type="button" class="btn btn-primary">Login</button></a>
+                <a href="addPost.php"><button type="button" class="btn btn-primary">Add Posting</button></a>
+                <a href="register.php"><button type="button" class="btn btn-primary">Sign-up</button></a>
+                ';
+          }
+          echo '
+      </div>
+    </header>
+  </div>
+</main>
+        ';
+}
+
+
+function echoDynamicBlackHeader() {
+    echo '
+    <div class = "blackHeader">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+          <ul class="nav navbar-nav">
+          ';
+        echo '
+        <li class="nav-item" id="0">
+        <a class="nav-link active" aria-current="page" href="#">Saved Items</a>
+        </li>
+        ';
+        $Categories = getAllCategoryNames();
+        foreach($Categories as $category)
+        {
+        echo '
+        <li class="nav-item" id="'.$category["categoryId"].'">
+        <a class="nav-link active" aria-current="page" href="#">'.$category["categoryName"].'</a>
+        </li>
+        ';
+        }
+        echo '
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+    ';
 }
 
 function echoFooter() {
