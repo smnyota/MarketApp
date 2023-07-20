@@ -111,6 +111,12 @@
         ]);
     }
 
+    function deleteSavedPost($userId, $productId) {
+        dbQuery("
+        DELETE FROM savedPosts WHERE userId = '$userId' AND productId = '$productId'
+        ");
+    }
+
     
 
   

@@ -3,9 +3,14 @@
   if(isset($_POST["id"])){
     $posts = displayCategory($_POST['id']); //All product posts from specific category
     $output = '';
+    $action = '';
+    $add = 0;
+    $delete = 1;
     
     if($_POST['id'] == 0) {
       if(verifyUser()) {
+        $userId = $_SESSION["userId"];
+
       //This case is only for displaying Saved Items
       $savedPosts = getSavedPosts($_SESSION['userId']);
       foreach($savedPosts as $saved) {
@@ -26,7 +31,7 @@
                   <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <a href="description.php?productId='.$prodId.'"> <button type="button" class="btn btn-sm btn-outline-secondary">View Item</button> </a>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Remove Item</button>
+                      <button onclick="savePost('.$userId.','.$prodId.', '.$delete.')" type="button" class="btn btn-sm btn-outline-secondary del" id="del">Remove Item</button>
                   </div><small class="text-body-secondary">WashUList</small></div>
                 </div>
             </div>
@@ -62,7 +67,7 @@
             <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
             <a href="description.php?productId='.$post['productId'].'"> <button type="button" class="btn btn-sm btn-outline-secondary">View Item</button> </a>
-              <button onclick="savePost('.$userId.','.$productId.')" type="button" class="btn btn-sm btn-outline-secondary">Save Item</button>
+              <button onclick="savePost('.$userId.','.$productId.', '.$add.')" type="button" class="btn btn-sm btn-outline-secondary">Save Item</button>
             </div>
             <small class="text-body-secondary">WashUList</small>
           </div>
@@ -81,3 +86,4 @@
       echo $output;
    }
 ?>
+

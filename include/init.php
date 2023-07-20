@@ -1,8 +1,6 @@
 <?php
     date_default_timezone_set('America/Chicago');
     session_start();
-    // $_SESSION['userId'] = 1;
-    //testing
     include('include/connect.php');
     include('include/db_query.php');
     include('include/helper_functions.php');
