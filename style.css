@@ -90,4 +90,13 @@ div.gallery {
   background-color: white;
 }
 
+.col {
+  transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.col:hover{
+
+  transform: scale(1.1);
+}
 

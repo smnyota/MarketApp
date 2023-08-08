@@ -1,12 +1,26 @@
+<script>
+    //include.php includes the config
+    //gitignore config
+    //make example file to git
+    //make non example file to gitnigore 
+    //what goes in the config file: aws keys (Sensitive), anything that's different in different dev files
+
+</script>
 <?php
     include('include/init.php');
+    include('awsEndpoint.php');
     // echoPosting();
     echoHeader();
     echoMainHeader();
     echoBlackNavBar();
+    use Aws\S3\S3Client;
+	use Aws\S3\Exception\S3Exception;
+   
+    redirectIfNotLoggedIn("sign-in.php?location=addPost");
     
-    redirectIfNotLoggedIn('sign-in.php?location=addPost');
     if(isset($_POST['postItem'])) {
+        $s3Path = movetoAWS($_FILES);
+        
         $postingTitle = $_POST['postingTitle'];
         $price = $_POST['price'];
         $location = $_POST['location'];
@@ -14,28 +28,29 @@
         $description = $_POST['description'];
         $conditionInput = $_POST['conditionInput'];
         $categoryInput = $_POST['categoryInput'];
-        $file = $_FILES['file'];
 
-        $fileName = $file['name'];
-        $fileTmpName = $file['tmp_name'];
-        $fileSize = $file['size'];
-        $fileError = $file['error'];
-        $fileType = $file['type'];
+        // $file = $_FILES['file'];
 
-        $splitFileName = explode('.', $fileName); //splits the fileName by period
-        $filteredFileExtension = strtolower(end($splitFileName)); //grabs the file extension
+        // $fileName = $file['name'];
+        // $fileTmpName = $file['tmp_name'];
+        // $fileSize = $file['size'];
+        // $fileError = $file['error'];
+        // $fileType = $file['type'];
+
+        // $splitFileName = explode('.', $fileName); //splits the fileName by period
+        // $filteredFileExtension = strtolower(end($splitFileName)); //grabs the file extension
 
         //Currently allowing all file types and sizes
-        if($fileError == 0) {
+        // if($fileError == 0) {
 
-          $fileNameNew = uniqid('', true).".".$filteredFileExtension; //creates unique id for image based on current time in microseconds (eliminates chance of repeated random #)
-          $fileDestination = '/Applications/MAMP/htdocs/images/'.$fileNameNew; 
-          move_uploaded_file($fileTmpName, $fileDestination); //moves to images file
-          $dbFileName = '/'.'images/'.$fileNameNew; //name for file in DB
-        } else {
-          echo "There was an error uploading your image!";
-          header("Location: addPost.php?uploadFailure");
-        }
+        // //   $fileNameNew = uniqid('', true).".".$filteredFileExtension; //creates unique id for image based on current time in microseconds (eliminates chance of repeated random #)
+        // //   $fileDestination = '/Applications/MAMP/htdocs/images/'.$fileNameNew; 
+        // //   move_uploaded_file($fileTmpName, $fileDestination); //moves to images file
+        // //   $dbFileName = '/'.'images/'.$fileNameNew; //name for file in DB
+        // } else {
+        //   echo "There was an error uploading your image!";
+        //   header("Location: addPost.php?uploadFailure");
+        // }
 
         if (isset($_POST['deliveredInput'])) {
             $deliveryAvailable = 'Yes';
@@ -44,13 +59,18 @@
         }
      
         $sellerId = $_SESSION['userId'];
-        $uploadSuccess = insertProduct($postingTitle, $price, $description, $sellerId, $location, $zipCode, $categoryInput, $deliveryAvailable, $conditionInput, $dbFileName);
+        $uploadSuccess = insertProduct($postingTitle, $price, $description, $sellerId, $location, $zipCode, $categoryInput, $deliveryAvailable, $conditionInput, $s3Path);
         debugOutput($uploadSuccess);
         if($uploadSuccess == NULL) {
-          header("Location: viewproduct.php?categoryId=$categoryInput");
+        //   header("Location: viewproduct.php?categoryId=$categoryInput");
+          $URL="viewProduct.php?categoryId=$categoryInput";
+          echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
+          echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
           exit();
         } else {
-          header("Location: addPost.php?error=UploadFailure");
+            $URL="addPost.php?uploadFailure";
+            echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
+            echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
         }
     }
 ?>
@@ -136,7 +156,5 @@
 </html>
 
     
-
-
 
 

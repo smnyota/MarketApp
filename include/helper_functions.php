@@ -5,3 +5,4 @@ function debugOutput($array) {
     var_dump($array);
     echo "</pre>";
 }
+
