@@ -5,7 +5,7 @@
         $products = dbQuery ( "
             Select *
             FROM product
-            ORDER BY productId ASC  
+            ORDER BY productId DESC  
             ")->fetchAll(); 
 
         return $products;
@@ -47,6 +47,15 @@
         ")->fetch();  
         return $user;
     }
+
+    function getSeller($userId) {
+        $user = dbQuery ( "
+        SELECT * FROM `user` WHERE `userId` = '$userId'
+        ")->fetch();  
+        return $user;
+    }
+
+     
 
     function insertUser($email, $phoneNumber, $firstName, $lastName, $hashedPassword){
         dbQuery("
@@ -111,12 +120,36 @@
         ]);
     }
 
+    function insertSavedPostS3($s3FilePath, $accessCode){
+        dbQuery("
+            INSERT INTO s3Files(s3FilePath, accessCode)
+            VALUES(:s3FilePath, :accessCode)
+        ", [
+            's3FilePath' => $s3FilePath,
+            'accessCode' => $accessCode
+        ]);
+    }
+
+    function getS3File($code) {
+        $file = dbQuery ( "
+        SELECT * FROM `s3Files` WHERE `accessCode` = '$code'
+        ")->fetch();  
+        return $file;
+    }
+    
+
     function deleteSavedPost($userId, $productId) {
         dbQuery("
         DELETE FROM savedPosts WHERE userId = '$userId' AND productId = '$productId'
         ");
     }
 
-    
-
-  
+        
+    function getFormattedDate($productId) {
+        $formattedDate = dbQuery ( "
+        SELECT Date_format(datePosted, '%a, %M %e') 
+        FROM product 
+        WHERE productId=$productId 
+        ")->fetch();  
+        return $formattedDate;
+    }

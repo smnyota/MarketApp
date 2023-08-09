@@ -20,7 +20,7 @@
           <div class="carousel-caption text-start">
             <h1>WashU's Secure Campus Marketplace! </h1>
             <p class="opacity-75">All you need for quick, safe, and reliable transactions.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            <p><a class="btn btn-lg btn-primary" href="register.php">Sign up today</a></p>
           </div>
         </div>
       </div>
@@ -28,9 +28,9 @@
         <img class="bd-placeholder-img" width="100%" height="100%" src="/images/sample4.png" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
         <div class="container">
           <div class="carousel-caption">
-            <h1>Inspired by the Future</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores est voluptate consequatur harum nulla esse cumque molestiae sequi eos odio.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Shop Now</a></p>
+            <h1 class = "sample">Inspired by the Future</h1>
+            <p class = "sample">Secure Marketplace keeping you protected every step of the way.</p>
+            <p><a class="btn btn-lg btn-primary" href="viewProduct.php">Shop Now</a></p>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
           <div class="carousel-caption text-end">
             <h1>Trusted Marketplace</h1>
             <p>All you need for quick, safe, and reliable transactions.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Create a Posting</a></p>
+            <p><a class="btn btn-lg btn-primary" href="addPost.php">Create a Posting</a></p>
           </div>
         </div>
       </div>
@@ -97,8 +97,8 @@
           <strong class="d-inline-block mb-2 text-primary-emphasis">Electronics</strong>
           <h3 class="mb-0">Explore Cutting Edge Technology.</h3>
           <div class="mb-1 text-body-secondary">View Great Summer Deals!</div>
-          <p class="card-text mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae non deserunt aperiam a quia hic cumque facere. Officia vitae eaque, similique consequuntur ullam error consectetur magnam quas autem natus assumenda?</p>
-          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+          <p class="card-text mb-auto">Discover a world of cutting-edge technology and top-notch gadgets in our Electronics section. Whether you're a tech enthusiast, a seasoned pro, or simply looking to upgrade your devices, we've got you covered.</p>
+          <a href="viewProduct.php?categoryId=4" class="icon-link gap-1 icon-link-hover stretched-link">
             Explore Electronics
           </a>
         </div>
@@ -113,8 +113,8 @@
           <strong class="d-inline-block mb-2 text-success-emphasis">Books</strong>
           <h3 class="mb-0">Find Affordable Textbooks</h3>
           <div class="mb-1 text-body-secondary">100% User Guaranteed</div>
-          <p class="mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dicta quam delectus magni perspiciatis minima numquam qui, deserunt ex quae.</p>
-          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+          <p class="mb-auto">Delve into a captivating world of knowledge and imagination in our Book Emporium. We've got the perfect book for you. Explore a diverse collection of bestsellers, classics, and textbooks that enrich your mind.</p>
+          <a href="viewProduct.php?categoryId=2" class="icon-link gap-1 icon-link-hover stretched-link">
             Browse Books, Movies, & Music
           </a>
         </div>
@@ -135,9 +135,9 @@
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-primary-emphasis">Appliances</strong>
           <h3 class="mb-0">Find Reliable Dorm and Appartment Appliances.</h3>
-          <div class="mb-1 text-body-secondary">Lorem ipsum dolor sit amet.</div>
-          <p class="card-text mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae non deserunt </p>
-          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+          <div class="mb-1 text-body-secondary">Perfect for Move-In!</div>
+          <p class="card-text mb-auto">Explore our Appliance Haven and Dorm Essentials! Discover a wide range of efficient and stylish appliances to simplify daily tasks. Deck out your dorm with compact, space-saving appliances.</p>
+          <a href="viewProduct.php?categoryId=1" class="icon-link gap-1 icon-link-hover stretched-link">
             Explore Appliances
           </a>
         </div>
@@ -152,8 +152,8 @@
           <strong class="d-inline-block mb-2 text-success-emphasis">Clothing</strong>
           <h3 class="mb-0">Find Affordable Back to School Clothing</h3>
           <div class="mb-1 text-body-secondary">100% User Guaranteed</div>
-          <p class="mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dicta quam delectus magni perspiciatis minima numquam qui, deserunt ex quae.</p>
-          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+          <p class="mb-auto">Step into the Fashion Oasis and Back to School Wardrobe! Find the latest trends and timeless classics to elevate your style. Get ready for school with trendy and comfortable clothing for an A+ look!</p>
+          <a href="viewProduct.php?categoryId=3" class="icon-link gap-1 icon-link-hover stretched-link">
             See Clothing, Shoes, & Accessories
           </a>
           </div>
@@ -171,9 +171,9 @@
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2 text-primary-emphasis">Health & Beauty</strong>
             <h3 class="mb-0">Find Essential Health and Wellness Products</h3>
-            <div class="mb-1 text-body-secondary">Lorem ipsum dolor sit amet.</div>
-            <p class="card-text mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae non deserunt aperiam a quia hic cumque facere. </p>
-            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            <div class="mb-1 text-body-secondary">Look and Feel Your Best!</div>
+            <p class="card-text mb-auto">Step into the Fashion Oasis and Back to School Wardrobe! Find the latest trends and timeless classics to elevate your style. Get ready for school with trendy and comfortable clothing for an A+ look!</p>
+            <a href="viewProduct.php?categoryId=5" class="icon-link gap-1 icon-link-hover stretched-link">
               Explore Health & Beauty
             </a>
           </div>
@@ -189,7 +189,7 @@
             <h3 class="mb-0">Brought your Pet to Campus?</h3>
             <div class="mb-1 text-body-secondary">We've got you covered!</div>
             <p class="mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dicta quam delectus magni perspiciatis minima numquam qui, deserunt ex quae.</p>
-            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            <a href="viewProduct.php?categoryId=7" class="icon-link gap-1 icon-link-hover stretched-link">
               Browse Pet Supplies
             </a>
           </div>
@@ -205,8 +205,8 @@
     <hr class="featurette-divider">
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">Extensive Product Options <span class="text-muted">It'll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <h2 class="featurette-heading">Extensive Product Options <span class="text-muted">That will change your life.</span></h2>
+        <p class="lead">"Discover WashUList: Revolutionize Your Shopping Experience with a Vast Array of Life-Changing Product Choices!"</p>
       </div>
       <div class="col-md-5">
         <img class="featurette-image img-fluid mx-auto" src = "/images/sample.png" alt="WashUList Logo Card">
@@ -216,7 +216,7 @@
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading">Unlimited Product Posting <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <p class="lead">"Empower Your Selling Experience: Unleash the Potential of Unlimited Product Posting on WashUList!"</p>
       </div>
       <div class="col-md-5 order-md-1">
         <img class="featurette-image img-fluid mx-auto" src = "/images/sample.png" alt="WashUList Logo Card">
@@ -226,7 +226,7 @@
     <div class="row featurette">
       <div class="col-md-7">
         <h2 class="featurette-heading">100% Satisfaction Guaranteed <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <p class="lead">"Checkmate Doubt: Experience Unparalleled Shopping Confidence with Our 100% Satisfaction Guaranteed Promise on WashUList!"</p>
       </div>
       <div class="col-md-5">
         <img class="featurette-image img-fluid mx-auto" src = "/images/sample.png" alt="WashUList Logo Card">

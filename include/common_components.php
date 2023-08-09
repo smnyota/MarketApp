@@ -14,12 +14,17 @@ function echoHeader() {
       <link href="/examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
       <link href="/carousel.css" rel="stylesheet">
       <link href="/examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+      
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
       <link href="headers.css" rel="stylesheet">
       <link href="style.css" rel="stylesheet">
 
         <!--Google Custom Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+      <!--Font Awesome -->
+      <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
         </head>
         ';
 }
@@ -60,32 +65,32 @@ function echoBlackNavBar() {
           </button>
           <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
             <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="viewproduct.php?categoryId=0">Saved Items</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="viewproduct.php">All Posts</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Recently Viewed</a>
+                <button class="nav-link active" aria-current="page" href="viewproduct.php?categoryId=1">Appliances</a>
               </li>
               <li class="nav-item">
-                <button class="nav-link active" aria-current="page" href="#">Appliances</a>
+                <a class="nav-link active" aria-current="page" href="viewproduct.php?categoryId=2">Books, Movies, & Music</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Books, Movies, & Music</a>
+                <a class="nav-link active" aria-current="page" href="viewproduct.php?categoryId=3">Clothing, Shoes, & Accessories</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Clothing, Shoes, & Accessories</a>
+                <a class="nav-link active" aria-current="page" href="viewproduct.php?categoryId=4">Electronics</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Electronics</a>
+                <a class="nav-link active" aria-current="page" href="viewproduct.php?categoryId=5">Health & Beauty</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Health & Beauty</a>
+                <a class="nav-link active" aria-current="page" href="viewproduct.php?categoryId=6">Miscellaneous</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Miscellaneous</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Pet Supplies</a>
+                <a class="nav-link active" aria-current="page" href="viewproduct.php?categoryId=7">Pet Supplies</a>
               </li>
             </ul>
           </div>
@@ -101,9 +106,12 @@ function verifyUser() {
     return array_key_exists("userId", $_SESSION);
 }
 
-function redirectIfNotLoggedIn($redirectUrl) {
+//Decided to redirect with js reason: AWS seems to be messing with the headers which PHP does not like
+function redirectIfNotLoggedIn($URL) {
+  
     if(!verifyUser()) {
-        header("Location: $redirectUrl");
+      echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
+      echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
         exit();
     } else {
         return $_SESSION['userId'];
@@ -125,6 +133,7 @@ function echoUserHeader() {
 }
 
 function echoMainHeader() {
+
    echo '
    <main>
  <div class="container">
@@ -137,7 +146,7 @@ function echoMainHeader() {
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="index.php" class="nav-link px-2">Home</a></li>
         <li><a href="viewproduct.php" class="nav-link px-2 link-secondary">Shop</a></li>
-        <li><a href="#" class="nav-link px-2">Features</a></li>
+        <li><a href="index.php#FAQ" class="nav-link px-2">Features</a></li>
         <li><a href="#" class="nav-link px-2">FAQs</a></li>
         <li><a href="#" class="nav-link px-2">About</a></li>
       </ul>
@@ -180,6 +189,9 @@ function echoDynamicBlackHeader() {
         <li class="nav-item" id="0">
         <a class="nav-link active" aria-current="page" href="#">Saved Items</a>
         </li>
+        <li class="nav-item" id="99">
+        <a class="nav-link active" aria-current="page" href="#">All Items</a>
+        </li>
         ';
         $Categories = getAllCategoryNames();
         foreach($Categories as $category)
@@ -206,7 +218,7 @@ function echoFooter() {
     <footer class="container">
       <p class="float-right"><a href="#">Back to top</a></p>
       <!--Trademark and middledot logo -->
-      <p>&copy; WashUList &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p> <!--May link a page for these for later-->
+      <p>&copy; WashUList &middot; <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Privacy</a> &middot; <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Terms</a></p> <!--May link a page for these for later-->
     </footer>
   </html>
   

@@ -162,17 +162,10 @@ body {
     box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);;
 }
 
-#myDIV {
-    /* margin-top: 100rem; */
-}
+
 
 
 /*scroll bar */
-
-
-
-
-
 
 /* index.php styling */
 
@@ -246,4 +239,75 @@ body {
 }
 .bd-mode-toggle {
   z-index: 1500;
+}
+
+
+
+/* Modal Info */
+.test {
+  margin: auto;
+  height: 300px;
+  width: 500px;
+  max-width: 500px;
+  max-height: 300px;
+}
+
+.test img {
+  height: 100%;
+  width: 100%;
+  
+}
+
+.test2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
+
+.child {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.time {
+  font-size: 18px;
+}
+
+.cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-size: 19px;
+}
+
+.washu {
+  font-weight: bold;
+  font-size: 20px;
+  align-self: flex-start;
+}
+
+.topContainer {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ctitle {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.test3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 15px;
+  font-weight: bold;
+  color:#080d19;
+}
+
+.sample {
+  color: rgb(244, 67, 8);
 }
