@@ -5,12 +5,10 @@ require 's3/vendor/autoload.php';
 use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
 
-//testing environemntal variables
 require __DIR__ . '/vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/');
 $dotenv->load();
-//test over
 
 function movetoAWS($uploadedFile) {
 	// AWS Info
