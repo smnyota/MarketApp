@@ -98,7 +98,7 @@
           <h3 class="mb-0">Explore Cutting Edge Technology.</h3>
           <div class="mb-1 text-body-secondary">View Great Summer Deals!</div>
           <p class="card-text mb-auto">Discover a world of cutting-edge technology and top-notch gadgets in our Electronics section. Whether you're a tech enthusiast, a seasoned pro, or simply looking to upgrade your devices, we've got you covered.</p>
-          <a href="viewProduct.php?categoryId=4" class="icon-link gap-1 icon-link-hover stretched-link">
+          <a href="viewproduct.php?categoryId=4" class="icon-link gap-1 icon-link-hover stretched-link">
             Explore Electronics
           </a>
         </div>
