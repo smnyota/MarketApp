@@ -200,7 +200,7 @@
       </div>
     </div>
     </div>
-<main role="main">
+<main role="main" id="next">
   <div class="container marketing">
     <hr class="featurette-divider">
     <div class="row featurette">
@@ -232,7 +232,7 @@
         <img class="featurette-image img-fluid mx-auto" src = "/images/sample.png" alt="WashUList Logo Card">
       </div>
     </div>
-    <hr class="featurette-divider">
+    <hr class="featurette-divider" id="about">
   </div>
  </main>
  <?php

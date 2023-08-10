@@ -147,8 +147,8 @@ function echoMainHeader() {
         <li><a href="index.php" class="nav-link px-2">Home</a></li>
         <li><a href="viewproduct.php" class="nav-link px-2 link-secondary">Shop</a></li>
         <li><a href="index.php#FAQ" class="nav-link px-2">Features</a></li>
-        <li><a href="#" class="nav-link px-2">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2">About</a></li>
+        <li><a href="index.php#next" class="nav-link px-2">FAQs</a></li>
+        <li><a href="index.php#about" class="nav-link px-2">About</a></li>
       </ul>
       <div class="col-md-3 text-end">
       ';
