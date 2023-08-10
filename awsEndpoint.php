@@ -6,7 +6,9 @@ use Aws\S3\Exception\S3Exception;
 
 require __DIR__ . '/vendor/autoload.php';
 
+//This will be null in local environments
 $PlanetScaleDatabaseUrl = getenv("PLANETSCALE_DATABASE_URL");
+
 $IAM_KEY = '';
 $IAM_SECRET = '';
 
@@ -23,7 +25,6 @@ if ($PlanetScaleDatabaseUrl) {
 
 function movetoAWS($uploadedFile) {
 
-	//repeated logic but currrently working locally
 	$PlanetScaleDatabaseUrl = getenv("PLANETSCALE_DATABASE_URL");
 	$IAM_KEY = '';
 	$IAM_SECRET = '';
@@ -38,7 +39,6 @@ function movetoAWS($uploadedFile) {
 		$IAM_KEY = $_SERVER['IAM_KEY'];
 		$IAM_SECRET = $_SERVER['IAM_SECRET'];
 	}
-	//repeated logic but currently working locally
 
 $bucketName = 'washulist';
 
