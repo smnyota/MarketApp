@@ -6,20 +6,39 @@ use Aws\S3\Exception\S3Exception;
 
 require __DIR__ . '/vendor/autoload.php';
 
-
 $PlanetScaleDatabaseUrl = getenv("PLANETSCALE_DATABASE_URL");
+$IAM_KEY = '';
+$IAM_SECRET = '';
+
 if ($PlanetScaleDatabaseUrl) {
 	$IAM_KEY = getenv('IAM_KEY');
 	$IAM_SECRET = getenv('IAM_SECRET');
 } else {
+	//local host
 	$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/');
 	$dotenv->load();
 	$IAM_KEY = $_SERVER['IAM_KEY'];
 	$IAM_SECRET = $_SERVER['IAM_SECRET'];
 }
 
-
 function movetoAWS($uploadedFile) {
+
+	//repeated logic but currrently working locally
+	$PlanetScaleDatabaseUrl = getenv("PLANETSCALE_DATABASE_URL");
+	$IAM_KEY = '';
+	$IAM_SECRET = '';
+
+	if ($PlanetScaleDatabaseUrl) {
+		$IAM_KEY = getenv('IAM_KEY');
+		$IAM_SECRET = getenv('IAM_SECRET');
+	} else {
+		//local host
+		$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/');
+		$dotenv->load();
+		$IAM_KEY = $_SERVER['IAM_KEY'];
+		$IAM_SECRET = $_SERVER['IAM_SECRET'];
+	}
+	//repeated logic but currently working locally
 
 $bucketName = 'washulist';
 
