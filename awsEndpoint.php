@@ -6,10 +6,17 @@ use Aws\S3\Exception\S3Exception;
 
 require __DIR__ . '/vendor/autoload.php';
 
-// $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/');
-// $dotenv->load();
-$IAM_KEY = getenv('IAM_KEY');
-$IAM_SECRET = getenv('IAM_SECRET');
+
+$PlanetScaleDatabaseUrl = getenv("PLANETSCALE_DATABASE_URL");
+if ($PlanetScaleDatabaseUrl) {
+	$IAM_KEY = getenv('IAM_KEY');
+	$IAM_SECRET = getenv('IAM_SECRET');
+} else {
+	$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/');
+	$dotenv->load();
+	$IAM_KEY = $_SERVER['IAM_KEY'];
+	$IAM_SECRET = $_SERVER['IAM_SECRET'];
+}
 
 
 function movetoAWS($uploadedFile) {
@@ -20,8 +27,6 @@ try {
 	$s3 = S3Client::factory(
 		array(
 			'credentials' => array(
-				// 'key' => $_SERVER['IAM_KEY'],
-				// 'secret' => $_SERVER['IAM_SECRET']
 				'key' => $IAM_KEY,
 				'secret' => $IAM_SECRET
 			),
