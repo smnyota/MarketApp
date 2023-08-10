@@ -20,15 +20,15 @@
 		$DbName = DB_DATABASE;
 	}
 
-	$dsn = "mysql:host=".$DbServer.";dbname=".$DbName.";charset=utf8";
+	$dsn = "mysql:host=".$DbServer.";port=8889;dbname=".$DbName.";charset=utf8";
     $opt = array(
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         PDO::ATTR_EMULATE_PREPARES   => false,
         PDO::MYSQL_ATTR_SSL_CA => "/etc/ssl/cert.pem",
     );
-    $pdo = new PDO($dsn, $DbUser, $DbPassword, $opt);	
-	
+    $pdo = new PDO($dsn, $DbUser, $DbPassword, $opt);
+    
 	function dbQuery($query, $values=array()){
 	  global $pdo;
 	
