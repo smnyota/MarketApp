@@ -30,7 +30,7 @@
           <div class="carousel-caption">
             <h1 class = "sample">Inspired by the Future</h1>
             <p class = "sample">Secure Marketplace keeping you protected every step of the way.</p>
-            <p><a class="btn btn-lg btn-primary" href="viewProduct.php">Shop Now</a></p>
+            <p><a class="btn btn-lg btn-primary" href="viewproduct.php">Shop Now</a></p>
           </div>
         </div>
       </div>
@@ -114,7 +114,7 @@
           <h3 class="mb-0">Find Affordable Textbooks</h3>
           <div class="mb-1 text-body-secondary">100% User Guaranteed</div>
           <p class="mb-auto">Delve into a captivating world of knowledge and imagination in our Book Emporium. We've got the perfect book for you. Explore a diverse collection of bestsellers, classics, and textbooks that enrich your mind.</p>
-          <a href="viewProduct.php?categoryId=2" class="icon-link gap-1 icon-link-hover stretched-link">
+          <a href="viewproduct.php?categoryId=2" class="icon-link gap-1 icon-link-hover stretched-link">
             Browse Books, Movies, & Music
           </a>
         </div>
@@ -137,7 +137,7 @@
           <h3 class="mb-0">Find Reliable Dorm and Appartment Appliances.</h3>
           <div class="mb-1 text-body-secondary">Perfect for Move-In!</div>
           <p class="card-text mb-auto">Explore our Appliance Haven and Dorm Essentials! Discover a wide range of efficient and stylish appliances to simplify daily tasks. Deck out your dorm with compact, space-saving appliances.</p>
-          <a href="viewProduct.php?categoryId=1" class="icon-link gap-1 icon-link-hover stretched-link">
+          <a href="viewproduct.php?categoryId=1" class="icon-link gap-1 icon-link-hover stretched-link">
             Explore Appliances
           </a>
         </div>
@@ -153,7 +153,7 @@
           <h3 class="mb-0">Find Affordable Back to School Clothing</h3>
           <div class="mb-1 text-body-secondary">100% User Guaranteed</div>
           <p class="mb-auto">Step into the Fashion Oasis and Back to School Wardrobe! Find the latest trends and timeless classics to elevate your style. Get ready for school with trendy and comfortable clothing for an A+ look!</p>
-          <a href="viewProduct.php?categoryId=3" class="icon-link gap-1 icon-link-hover stretched-link">
+          <a href="viewproduct.php?categoryId=3" class="icon-link gap-1 icon-link-hover stretched-link">
             See Clothing, Shoes, & Accessories
           </a>
           </div>
@@ -173,7 +173,7 @@
             <h3 class="mb-0">Find Essential Health and Wellness Products</h3>
             <div class="mb-1 text-body-secondary">Look and Feel Your Best!</div>
             <p class="card-text mb-auto">Step into the Fashion Oasis and Back to School Wardrobe! Find the latest trends and timeless classics to elevate your style. Get ready for school with trendy and comfortable clothing for an A+ look!</p>
-            <a href="viewProduct.php?categoryId=5" class="icon-link gap-1 icon-link-hover stretched-link">
+            <a href="viewproduct.php?categoryId=5" class="icon-link gap-1 icon-link-hover stretched-link">
               Explore Health & Beauty
             </a>
           </div>
@@ -189,7 +189,7 @@
             <h3 class="mb-0">Brought your Pet to Campus?</h3>
             <div class="mb-1 text-body-secondary">We've got you covered!</div>
             <p class="mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dicta quam delectus magni perspiciatis minima numquam qui, deserunt ex quae.</p>
-            <a href="viewProduct.php?categoryId=7" class="icon-link gap-1 icon-link-hover stretched-link">
+            <a href="viewproduct.php?categoryId=7" class="icon-link gap-1 icon-link-hover stretched-link">
               Browse Pet Supplies
             </a>
           </div>

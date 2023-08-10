@@ -63,7 +63,7 @@
         debugOutput($uploadSuccess);
         if($uploadSuccess == NULL) {
         //   header("Location: viewproduct.php?categoryId=$categoryInput");
-          $URL="viewProduct.php?categoryId=$categoryInput";
+          $URL="viewproduct.php?categoryId=$categoryInput";
           echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
           echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
           exit();
