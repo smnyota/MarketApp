@@ -9,7 +9,6 @@
 <?php
     include('include/init.php');
     include('awsEndpoint.php');
-    $credentials = new Aws\Credentials\Credentials($IAM_KEY, $IAM_SECRET);
 
     // echoPosting();
     echoHeader();
