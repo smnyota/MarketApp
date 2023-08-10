@@ -21,12 +21,22 @@
 	}
 
 	$dsn = "mysql:host=".$DbServer.";dbname=".$DbName.";charset=utf8";
-    $opt = array(
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES   => false,
-        PDO::MYSQL_ATTR_SSL_CA => "/etc/ssl/certs/ca-certificates.crt",
-    );
+
+	if($PlanetScaleDatabaseUrl){
+		$opt = array(
+			PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+			PDO::ATTR_EMULATE_PREPARES   => false,
+			PDO::MYSQL_ATTR_SSL_CA => "/etc/ssl/certs/ca-certificates.crt",
+		);
+	} else {
+		$opt = array(
+			PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+			PDO::ATTR_EMULATE_PREPARES   => false,
+		);
+	}
+
     $pdo = new PDO($dsn, $DbUser, $DbPassword, $opt);
 
 	function dbQuery($query, $values=array()){
